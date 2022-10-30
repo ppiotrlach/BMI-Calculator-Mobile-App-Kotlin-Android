@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/bmi_calculator_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/bmi_calculator_text"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/age_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="@string/age_text"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bmi_calculator_textView"
+        tools:text="Age:" />
+
+    <TextView
+        android:id="@+id/gener_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="@string/age_text"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/age_textView"
+        tools:text="Gender:" />
+
+    <TextView
+        android:id="@+id/height_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="@string/age_text"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gener_textView"
+        tools:text="Height:" />
+
+    <TextView
+        android:id="@+id/weight_textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/age_text"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/height_textView"
+        tools:text="Weight:" />
+
+    <EditText
+        android:id="@+id/age_editTextNumber"
+        android:layout_width="263dp"
+        android:layout_height="71dp"
+        android:ems="10"
+        android:hint="@string/your_age_hint_text"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.634"
+        app:layout_constraintStart_toEndOf="@+id/age_textView"
+        app:layout_constraintTop_toTopOf="@+id/age_textView" />
+
+    <EditText
+        android:id="@+id/height_editTextNumber"
+        android:layout_width="263dp"
+        android:layout_height="71dp"
+        android:ems="10"
+        android:hint="@string/your_height_hint_text"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintStart_toEndOf="@+id/height_textView"
+        app:layout_constraintTop_toTopOf="@+id/height_textView" />
+
+    <EditText
+        android:id="@+id/weight_editTextNumber"
+        android:layout_width="263dp"
+        android:layout_height="71dp"
+        android:ems="10"
+        android:hint="@string/your_height_hint_text"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintStart_toEndOf="@+id/height_textView"
+        app:layout_constraintTop_toTopOf="@+id/weight_textView2" />
+
+    <RadioButton
+        android:id="@+id/male_radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Male"
+        app:layout_constraintStart_toEndOf="@+id/gener_textView"
+        app:layout_constraintTop_toTopOf="@+id/gener_textView" />
+
+    <RadioButton
+        android:id="@+id/female_radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Female"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toEndOf="@+id/male_radioButton"
+        app:layout_constraintTop_toTopOf="@+id/male_radioButton" />
+
+    <Button
+        android:id="@+id/calculateBMIButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Calculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weight_editTextNumber" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
