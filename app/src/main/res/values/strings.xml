@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">BMICalculator</string>
-    <string name="bmi_calculator_text">BMI Calculator</string>
-    <string name="age_text">TextView</string>
-    <string name="your_age_hint_text">your age</string>
-    <string name="your_height_hint_text">your height</string>
+    <string name="bmi_calculator">BMI Calculator</string>
+    <string name="age">Age</string>
+    <string name="gender">Gender</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
 </resources>

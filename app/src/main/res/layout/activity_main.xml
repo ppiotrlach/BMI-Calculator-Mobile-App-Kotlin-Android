@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="@string/bmi_calculator_text"
+        android:text="@string/bmi_calculator"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:text="@string/age_text"
+        android:text="@string/age"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.096"
@@ -36,11 +36,11 @@
         android:id="@+id/gener_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="@string/age_text"
+        android:layout_marginTop="76dp"
+        android:text="@string/gender"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintHorizontal_bias="0.088"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/age_textView"
         tools:text="Gender:" />
@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
-        android:text="@string/age_text"
+        android:text="@string/height"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.104"
@@ -63,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:text="@string/age_text"
+        android:text="@string/weight"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.104"
@@ -76,7 +76,7 @@
         android:layout_width="263dp"
         android:layout_height="71dp"
         android:ems="10"
-        android:hint="@string/your_age_hint_text"
+        android:hint="@string/age"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.634"
@@ -88,7 +88,7 @@
         android:layout_width="263dp"
         android:layout_height="71dp"
         android:ems="10"
-        android:hint="@string/your_height_hint_text"
+        android:hint="@string/height"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.567"
@@ -100,31 +100,38 @@
         android:layout_width="263dp"
         android:layout_height="71dp"
         android:ems="10"
-        android:hint="@string/your_height_hint_text"
+        android:hint="@string/weight"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toEndOf="@+id/height_textView"
         app:layout_constraintTop_toTopOf="@+id/weight_textView2" />
 
-    <RadioButton
-        android:id="@+id/male_radioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Male"
-        app:layout_constraintStart_toEndOf="@+id/gener_textView"
-        app:layout_constraintTop_toTopOf="@+id/gener_textView" />
-
-    <RadioButton
-        android:id="@+id/female_radioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Female"
+    <RadioGroup
+        android:id="@+id/gender_radioGroup"
+        android:layout_width="241dp"
+        android:layout_height="54dp"
+        android:checkedButton="@id/female_radioButton"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/height_editTextNumber"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.191"
-        app:layout_constraintStart_toEndOf="@+id/male_radioButton"
-        app:layout_constraintTop_toTopOf="@+id/male_radioButton" />
+        app:layout_constraintHorizontal_bias="0.355"
+        app:layout_constraintStart_toEndOf="@+id/gener_textView"
+        app:layout_constraintTop_toBottomOf="@+id/age_editTextNumber"
+        app:layout_constraintVertical_bias="0.513">
+
+        <RadioButton
+            android:id="@+id/female_radioButton"
+            android:layout_width="102dp"
+            android:layout_height="48dp"
+            android:text="Female" />
+
+        <RadioButton
+            android:id="@+id/male_radioButton"
+            android:layout_width="143dp"
+            android:layout_height="48dp"
+            android:text="Male" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/calculateBMIButton"
