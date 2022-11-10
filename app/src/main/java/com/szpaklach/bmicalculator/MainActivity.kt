@@ -119,7 +119,11 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun calculateBMI(height: Float, weight: Float, isMan : Boolean) {
-        val BMI: Float = weight / (height * height)
+        fun Float.roundMe(): Float {
+            return String.format("%.1f", this).toFloat()
+        }
+        val BMI: Float = (weight / (height * height)).roundMe()
+
         var bmiInterpretation: String = ""
 
 
