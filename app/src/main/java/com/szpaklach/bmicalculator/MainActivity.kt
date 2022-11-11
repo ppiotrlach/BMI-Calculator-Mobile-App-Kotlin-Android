@@ -1,5 +1,7 @@
 package com.szpaklach.bmicalculator
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -30,6 +32,9 @@ class MainActivity : AppCompatActivity() {
     );
 
     private var age : Int = 0
+    private var passedBMI : String = ""
+    private var bmiInterpretation : String = ""
+    private var bodyType : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -110,26 +115,32 @@ class MainActivity : AppCompatActivity() {
 
         val resultsButton: Button = findViewById(R.id.inspectResultsButton)
         resultsButton.setOnClickListener {
-            //ROUTING
+            val intent = Intent(this, ResultActivity::class.java)
+            intent.putExtra("BMI", passedBMI)
+            intent.putExtra("interpretation", bmiInterpretation)
+            intent.putExtra("type", bodyType)
+
+            startActivity(intent)
         }
 
 
     }
 
 
-
     private fun calculateBMI(height: Float, weight: Float, isMan : Boolean) {
         val BMI: Float = weight / (height * height)
-        var bmiInterpretation: String = ""
 
 
         if (age <= 20) {
             if (isMan) {
                 bmiInterpretation = checkKidBoyBMI(BMI)
+                bodyType = "BOY"
             } else {
                 bmiInterpretation = checkKidGirlBMI(BMI)
+                bodyType = "GIRL"
             }
             } else {
+                bodyType = "ADULT"
                 if (BMI < 16) {
                     bmiInterpretation = "Severe Thinness"
                 } else if (BMI < 17) {
@@ -150,10 +161,10 @@ class MainActivity : AppCompatActivity() {
             }
 
 
-
+            passedBMI = String.format("%.2f", BMI)
 
             val textView: TextView = findViewById(R.id.resultTextView)
-            textView.text = "YOUR BMI: $BMI - $bmiInterpretation"
+            textView.text = "YOUR BMI: $passedBMI - $bmiInterpretation"
             textView.visibility = View.VISIBLE
 
             val resultsButton: Button = findViewById(R.id.inspectResultsButton)
